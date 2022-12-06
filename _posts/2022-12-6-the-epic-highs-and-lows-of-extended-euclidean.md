@@ -1,5 +1,3 @@
-<h1>Extended Euclidean</h1>
-
 <b>This is a draft for testing... need to finish writing this and figure out LaTeX.</b>
 
 As the fall semester ends - and with it, Guha's cryptography class - I've been looking for ways to keep learning. I started working my way through a site called CryptoHacks (https://cryptohack.org/challenges/). One of the early challenges involves calculating modular inverses.
