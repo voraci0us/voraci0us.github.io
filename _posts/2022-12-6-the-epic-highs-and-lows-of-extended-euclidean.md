@@ -1,3 +1,10 @@
+---
+tags:
+- Math
+- Crypto
+---
+
+
 <b>This is a draft for testing... need to finish writing this and figure out LaTeX.</b>
 
 As the fall semester ends - and with it, Guha's cryptography class - I've been looking for ways to keep learning. I started working my way through a site called CryptoHacks (https://cryptohack.org/challenges/). One of the early challenges involves calculating modular inverses.
@@ -64,3 +71,25 @@ In other words, if we replace the larger number with the difference between the 
 We can take this a step further and say GCD(a, b) == GCD (a % b, b).
 If a - b is still greater than b, we're just going to subtract b again and get a - 2b and so on.
 The mod is just a shortcut of doing those repeated steps in one step.
+
+Here's the full code, I'll finish this post over the next few days:
+```python
+def gcd(a, b, c):
+    mi = min(a,b)
+    ma = max(a,b)
+    if ma % mi == 0:
+        return c
+    c.append([ma, mi, ma // mi, ma % mi])
+    return gcd(a % b, b, c) if a > b else gcd(b % a, a, c)
+
+def egcd(a, b):
+    arr = gcd(a, b, [])[::-1]
+    l = arr[0]
+    s = [l[3], l[0], 1, l[1], -l[2]]
+    for aa in arr[1:]:
+        s[3] = aa[0]
+        s[2] -= aa[2] * s[4]
+        s[2], s[4] = s[4], s[2]
+        s[1], s[3] = s[3], s[1]
+    return f"{s[0]} = {s[1]} * {s[2]} + {s[3]} * {s[4]}"
+```
