@@ -23,7 +23,7 @@ url: http://voraci0.us
 
 title: voraci0.us
 description: >- # this means to ignore newlines until "baseurl:"
-  My blog for cyber/tech/math/other ramblings. Cold brew, cryptography, Sailor Moon are in. Lynch, "based", government, are out.
+  My blog for cyber/tech/math/other ramblings. Cold brew, cryptography, Sailor Moon are in. David Lynch, "based", government, are out.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  voraci0us
