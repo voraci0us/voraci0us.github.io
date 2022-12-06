@@ -19,7 +19,7 @@ This post will contain a quick crash course in modular arithmetic + some light n
 Let's start with what "mod" means.
 In computing, "mod" is an operation that returns the remainder of integer division.
 It's usually represented with a percent sign "%".
-So \(14 \textrm{mod} 5\) is 4, since if you try to split 14 objects into groups of 5, you'll have 4 left.
+So 14 mod 5 is 4, since if you try to split 14 objects into groups of 5, you'll have 4 left.
 Modular arithmetic is widely used in cryptography. Partially because we can restrict large numbers to a resonable side, and partially because of [some properties](https://en.wikipedia.org/wiki/Discrete_logarithm) that make a modulus operation hard to undo.
 
 More generally, in math "mod" is a congruence relation.
