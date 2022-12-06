@@ -7,11 +7,11 @@ tags:
 
 As the fall semester ends - and with it, Guha's cryptography class - I've been looking for ways to keep learning. I started working my way through a site called [CryptoHacks](https://cryptohack.org/challenges/). One of the early challenges involves calculating modular inverses.
 
-I could have done pretty simply with Python builtins:
+You can do this with Python builtins:
 ```python
 pow(a, -1, n)
 ```
-But I figured this was as good a time as any to write my own mod inverse from scratch.
+But I figured this was a good opportunity to try writing my own mod inverse from scratch.
 This post will contain a quick crash course in modular arithmetic + some light number theory - if you know how arithmetic works, you should be fine.
 
 <h2>So what's a mod inverse?</h2>
