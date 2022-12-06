@@ -30,6 +30,8 @@ github_username:  voraci0us
 
 # Build settings
 theme: minima
+minima:
+  skin: dark
 plugins:
   - jekyll-feed
 # Exclude from processing.
