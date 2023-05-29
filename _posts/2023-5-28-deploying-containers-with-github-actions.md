@@ -1,12 +1,23 @@
-This summer, I'm working for IBM Research based out of Yorktown Heights, NY. It's been a great experience so far and I'll probably write about it closer to the end of the summer. But for now... no part-time jobs, competitions, or classes. In other words, <b>I have spare time</b>. Let's fix that.
+---
+tags:
+- Docker
+- DevOps
+---
+The first (official) post of this blog! I'm hoping to post regularly over the summer - I am working full time for IBM Research but have no classes or major competitions so I have time for some projects.
 
-I've gradually been dipping my toes into DevOps by getting familiar with Terraform/Ansible/Docker/Kubernetes. It feels like a good time to tie it together by building a full CI/CD pipeline to deploy an application.
+Last semester I encountered Docker/Kubernetes in a couple cyber competitions ([CPTC](https://cp.tc/) and [ISTS](https://ists.io/), respectively) and it inspired me to finally sit down and get better with containerization. I spent a few weeks designing/deploying simple applications to get some experience.  
 
-I proposed a project to ChatGPT:
-"I have a Gihub project that has a Dockerfile. I have a production server running the Docker image that the project creates. Everytime a push is made to the Github project, I want to rebuild the Docker image and redeploy it."
+I started wondering how to automate the deployment process of a containerized application. <b>Herein lies the project.</b>
 
-I find myself using ChatGPT mostly in the "I pitch you a problem, you come up with different solutions to it" fashion. In this case, it came back recommending a GitHub Actions workflow that builds the container, pushes it to a registry like Docker Hub, and SSHes into the production server to deploy. I said I didn't want credentials in the workflow in plaintext, and it recommended GitHub Secrets.
+![]({{ "assets/images/deploying-containers-with-github-actions_ChatGPT.png" | relative_url }})
 
-I have not used GitHub Actions (or Secrets) before. This sounds like a fun challenge. To make it a little trickier, I'm hosting my own GitHub Actions runner and container registry (Docker Harbour, a CNCF project).
+(Thanks OpenAI. I find myself using ChatGPT mostly in the "I pitch you a problem, you come up with different solutions to it" fashion)
 
-In the works currently, I'll update this post when it's done.
+It's too large to include in a screenshot, but it recommended a GitHub Actions workflow that
+- builds the container
+- pushes it to a registry like Docker Hub
+- connects to the production server via SSH to deploy
+
+A couple tweaks to this plan - I used GitHub Secrets instead of storing credentials in plaintext in the workflow, and I self-hosted a container registry ([Harbor](https://goharbor.io/)) for an extra challenge.
+
+WIP - I'll finish this post tomorrow. The workflow is working but needs a little polishing.
